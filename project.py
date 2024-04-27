@@ -10,7 +10,7 @@ new_db = FAISS.load_local("medical index", embeddings, allow_dangerous_deseriali
 st.title('Medical Question Answering')
 question = st.text_input("Enter your medical question:")
 if question:
-    retriever = new_db.as_retriever(search_kwargs={"k": 3})
+    retriever = new_db.as_retriever(search_kwargs={"k": 5})
     context = retriever.get_relevant_documents(question)
     st.write("Relevant documents:")
     st.write(context)
