@@ -5,8 +5,6 @@ from langchain_community.vectorstores import FAISS
 from langchain.chains import RetrievalQA
 
 model_name = "all-MiniLM-L6-v2"
-
-
 embeddings = HuggingFaceEmbeddings(model_name=model_name)
 new_db = FAISS.load_local("medical index", embeddings, allow_dangerous_deserialization=True)
 st.title('Medical Question Answering')
