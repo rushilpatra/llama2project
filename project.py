@@ -8,7 +8,7 @@ model_name = "all-MiniLM-L6-v2"
 embeddings = HuggingFaceEmbeddings(model_name=model_name)
 new_db = FAISS.load_local("medical index", embeddings, allow_dangerous_deserialization=True)
 st.title('Medical Chat Bot')
-question = st.text_input("How can I help you today?")
+question = st.text_input("Ask me a question")
 if question:
     retriever = new_db.as_retriever(search_kwargs={"k": 5})
     context = retriever.get_relevant_documents(question)
