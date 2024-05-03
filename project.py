@@ -42,8 +42,7 @@ if question:
             "", # output - leave this blank for generation!
         )
     ], return_tensors = "pt").to("cuda")
-
-outputs = model.generate(**inputs, max_new_tokens = 64, use_cache = True)
-tokenizer.batch_decode(outputs)
+    outputs = model.generate(**inputs, max_new_tokens = 64, use_cache = True)
+    tokenizer.batch_decode(outputs)
     st.write("Relevant documents:")
     st.write(context)
