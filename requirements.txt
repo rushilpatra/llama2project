@@ -6,4 +6,9 @@ transformers
 sentence-transformers
 datasets
 faiss-cpu
-
+unsloth[colab-new] @ git+https://github.com/unslothai/unsloth.git
+xformers<0.0.26
+trl
+peft
+accelerate
+bitsandbytes
